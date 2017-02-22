@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta content="" />
+<head>
+<title>CADASTRO DE COMPRAS E VENDA</title>
+<!--  links biblioteca -->
+<link href="framework/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+	rel="stylesheet" type="text/css" />
+<script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript" xml:space="preserve"></script>
+<script src="framework/bootstrap-3.3.7-dist/js/bootstrap.min.js"
+	type="text/javascript" xml:space="preserve"></script>
+<script type="text/javascript" src="framework/validacao/validacao.js"></script>
+</head>
+<body>
+	<div class=" container">
+		<div class="navbar-header">
+			<a href="index.jsf" id="logo" class="navbar-brand"><img
+				src="imagemProjeto/logoValeMobi.png" height="30" width="50" alt="" /></a>
+			<a href="" id="textSuperior" class="navbar-brand">CADASTRO DE
+				VENDAS E COMPRAS</a>
+		</div>
+	</div>
+	<h3 class="page-header">Cadastrar Produto ou Venda</h3>
+
+	<form name="frmCadastro" method="post" action="#{CadastroConsulta.formulario}" onsubmit="validar()" >
+		<div class="row">
+			<div class="form-group col-md-2">
+				<label for="campoCodigoMercadoria">Codigo Mercadoria</label> <input
+					type="text" class="form-control" id="campoCodigoMercadoria" onblur="somente_numero(this);" maxlength="10" value="#{CadastroConsulta.formulario.campoCodigoMercadoria}"/>
+			</div>
+			<div class="form-group col-md-2">
+				<label for="campoTipo">Tipo</label> <input type="text"
+					class="form-control" id="campoTipo" value="#{CadastroConsulta.formulario.campoTipo}"/>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="campoNome">Nome</label> <input type="text"
+					class="form-control" id="campoNome" maxlength="30" value="#{CadastroConsulta.formulario.campoNome}" />
+			</div>
+			<div class="form-group col-md-1">
+				<label for="campoQuantidade">Quantidade</label> <input type="text"
+					class="form-control" id="campoQuantidade" onblur="somente_numero(this);" maxlength="5" value="#{CadastroConsulta.formulario.campoQuantidade}" />
+			</div>
+			<div class="form-group col-md-1">
+				<label for="campoPreco">Preço</label> <input type="text"
+					class="form-control" id="campoPreco" onblur="converterReal(this);" value="#{CadastroConsulta.formulario.campoPreco}" />
+			</div>
+			<div class="form-group col-md-4">
+				<label for="TipoNegocio">Tipo de Negocio</label><br></br> <select
+					name="comboNegocio" id="comboNegocio" value="#{CadastroConsulta.formulario.tipoNegocio}" >
+					<option value="selecione">Selecione</option>
+					<option value="venda">VENDA</option>
+					<option value="compra ">COMPRA</option>
+				</select>
+			</div>
+		</div>
+		<hr />
+		<div id="btnEnviar" class="row">
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-primary" >Confirmar
+					Operações</button>
+				<a href="index.jsf" class="btn btn-default">Cancelar</a>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
