@@ -1,5 +1,10 @@
 package br.com.valemobi.vale;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+
+@ManagedBean(name="formularioCadastroBean")
+@RequestScoped
 public class FormularioCadastroBean {
    //Campos dos meus Formularios 
 	
